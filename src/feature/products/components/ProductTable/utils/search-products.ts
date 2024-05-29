@@ -23,6 +23,10 @@ export function searchProducts(
   categories: Category[],
   searchTerm: string,
 ): Category[] {
+  if (searchTerm.length < 3) {
+    return categories;
+  }
+
   // @ts-ignore
   return categories
     .map((category) => {
